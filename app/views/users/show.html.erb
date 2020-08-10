@@ -1,0 +1,19 @@
+<div class="container p-2">
+
+<%id_user=User.find(@id)%>
+<div class='container p-1'>
+<div class="card">
+<div class='card-header'>
+<h1> Profil du gossiper </h1>
+</div>
+
+<div class="card-body">
+<p><b> Prénom : </b><%=id_user.first_name%> </br>
+<p><b> Nom :</b> <%=id_user.last_name %> </br>
+<p><b> Description: </b><%= id_user.description %>
+<p><b> Email :</b> <%=id_user.email %> </br>
+<p><b> Age : </b><%=id_user.age %> </br>
+<p><b> Ville : </b><%= link_to id_user.city.name, city_path(id_user.city.id), class: "btn btn-secondary" %> </p>
+</div>
+</div>
+</div>

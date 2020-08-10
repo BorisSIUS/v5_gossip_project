@@ -1,0 +1,28 @@
+<div class="container p-2">
+    <h1>Ville de <%= City.find(@id).name %></h1>
+    <h2>Liste des potins dans la ville :</h2>
+   
+    <% @city_gossips.each_with_index do |gossip, index| %>
+        <div class="card mt-2 p-3">
+            <div class="pb-3">
+            <p>Auteur: <b><%= gossip.user.first_name %> </b></p>
+            </div>
+            <div>
+            <p>Title: <%= link_to "#{gossip.title}", gossip_path(gossip.id)%></p>
+            </div>
+            <div>
+            <%like_btn = (link_to "", gossip_likes_path(gossip.id), class: "bk far fa-thumbs-up fa-3x", method: :post)%>
+
+            <%gossip.likes.each do |like|%>
+                <% if  like.user == current_user%>
+                    <%like_btn = (link_to "", gossip_like_path(gossip.id, gossip.likes.find_by(user: current_user).id),class: "bk fas fa-thumbs-up fa-3x", method: :DELETE)%>
+                <% end %>
+            <% end %>
+
+            <p><%=like_btn%>
+
+            <p> Likes : <%=gossip.likes.length%> </p>
+            </div>
+        </div>
+    <% end %>
+</div>  

@@ -1,0 +1,76 @@
+<div class="container p-2">
+    <% unless @gossip == false %>
+    <div class="alert alert-success">
+        <p>Opération réussie</p>
+    </div>
+    <% end %>
+    <br/>
+    <br/>
+    <br/>
+    <h1>Bienvenue <%= @show_user %> </h1><br/>
+
+    <h3 style="text-align: center">they say all rumors are true so... what's your truth?</h3>
+    
+    <br/><br/>
+    
+    <p style="text-align: right">Sois un ami de m***e et balance les dossiers de tes potes sur le net 💩</p>
+
+    <br/><br/><hr><br/><br/>
+
+    <a href="<%=new_gossip_path%>">
+        <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="white">
+            BALANCE UN GROS DOSSIER
+        </button>
+    </a>
+
+
+    <br/><br/><hr><br/><br/>
+
+    <div class="gossip-index-container container">
+        <div class="justify-content-around d-flex flex-wrap ">
+        <% Gossip.all.each_with_index do |gossip, index| %>
+            <a href="<%=gossip_path(gossip.id)%>">
+                <div class="card mb-1 gossip-index">
+                    <div class="card-title  pt-3">
+                        <p><b><%= gossip.user.first_name %> </b></p>
+                    </div>
+                    <div>
+                        <p><%=gossip.title%></p>
+                    </div>
+                    <div>
+                        <%like_btn = (link_to "", gossip_likes_path(gossip.id), class: "bk far fa-thumbs-up fa-lg ", method: :post)%>
+
+                        <%gossip.likes.each do |like|%>
+                            <% if  like.user == current_user%>
+                                <%like_btn = (link_to "", gossip_like_path(gossip.id, gossip.likes.find_by(user: current_user).id),class: "bk fas fa-thumbs-up fa-lg", method: :DELETE)%>
+                            <% end %>
+                        <% end %>
+                    </div>
+                    <p><%=like_btn%>
+
+                    <p> Likes : <%=gossip.likes.length%> </p>
+                </div>
+        </a>
+    
+    <% end %>
+    </div>
+    </div>
+    <br/><br/><hr><br/><br/>
+    
+
+    <a href="<%=new_gossip_path%>">
+        <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="white">
+            BALANCE UN GROS DOSSIER
+        </button>
+    </a>
+
+
+
+    <br/><br/><hr><br/><br/>
+
+    <p style="text-align: center; font-size: 11px">All rights reserved © Pas'Tech CREW 2020</p>
+
+    <br/><br/>
+
+<br/>
+

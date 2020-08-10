@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #595c54; 
+    width: 100%;   
+    }
+
+  p {
+      color: #595c54;
+      
+    }
+
+  body {
+      background-color: #f5f4ed;
+      padding: 70px 0px 0px 0px;
+      width: 100%;
+    }
+    
+  a {
+      color: #595c54;
+    }
+
+  a:hover {
+      color: green;
+      text-decoration: none;
+      
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:100
+    }
+
+  .img-fluid {
+    height:30px; 
+    padding: 0px 20px 0px 10px;
+    }
+
+
+  .team {
+    padding: 35px;
+    text-align: center;
+  }
+
+  .flex-box {
+    justify-content: flex-end;
+  }
+
+  .container-navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .container-left {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container-right {
+    display: flex;
+    justify-content: right;
+  }
+
+  .navbar {
+      box-shadow: 0 6px 4px -2px rgba(0,0,0,.2);
+  }
+
+
+  .comment {
+    margin: 20px 20px 20px 20px;
+  }
+
+  .gossip-index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+  }
+
+  .gossip-index{
+    text-align: center;
+    width: 33%;
+    margin: auto;
+  }
+
+  .gossip-index:hover { 
+
+    background-color: #e4e6e1;
+    text-decoration: none;
+    
+
+  }
+
+  .bk:hover {
+    color: black;
+    text-decoration:none;
+    
+    z-index: 0
+  }
+
+  #white {
+    background-color: transparent;
+    border-radius: 30px 30px 30px 30px;
+    border-width: 3px;
+    border-color: #595c54;
+    color: #595c54; 
+    box-shadow: 0 6px 4px -2px rgba(0,0,0,.2);
+    margin: auto;
+  }
+
+  #white:hover {
+    background-color: #595c54; 
+    color: white;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 0 12px 4px -2px rgba(0,0,0,.2);
+    margin:auto;
+
+  }
